@@ -44,11 +44,11 @@ for (let i = 0; i < 55; i += 1) {
   speck.style.left = `${Math.random() * 100}vw`;
   speck.style.setProperty("--fall-time", `${5 + Math.random() * 7}s`);
   speck.style.setProperty("--fall-delay", `${-Math.random() * 12}s`);
-  speck.style.setProperty("--glitter-drift", `${-55 + Math.random() * 110}px`);
-
-  if (Math.random() > 0.65) {
-    speck.style.background = "#ffd5ec";
-  }
+  speck.style.setProperty("--glitter-scale", `${0.3 + Math.random() * 1.2}`);
+  const shade = Math.floor(Math.random() * 4);
+  if (shade === 1) speck.style.background = "radial-gradient(circle, #fff, red, transparent 67%)";
+  if (shade === 2) speck.style.background = "radial-gradient(circle, #fff, violet, transparent 67%)";
+  if (shade === 3) speck.style.background = "radial-gradient(circle, #fff, magenta, transparent 67%)";
 
   glitterContainer.appendChild(speck);
 }

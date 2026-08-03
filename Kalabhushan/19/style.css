@@ -567,3 +567,22 @@ button span {
     scroll-behavior: auto !important;
   }
 }
+
+/* Stacked 3D-circle cake, based on the requested reference style. */
+.cake { width:230px; height:230px; bottom:8px; left:25px; animation:rotateCake 12s linear infinite; }
+@keyframes rotateCake { from { transform:rotateX(-52deg) rotateY(0deg); } to { transform:rotateX(-52deg) rotateY(360deg); } }
+.cake .layer { position:absolute; left:50%; top:50%; width:230px; height:230px; border-radius:50%; transform:translate(-50%,-50%) rotateX(90deg) translateZ(42px); background:radial-gradient(circle at 35% 27%,#ffe38a 0 4%,#ffb347 47%,#e77420 100%); box-shadow:inset 11px 9px 20px rgba(255,255,255,.28),0 0 8px rgba(105,26,74,.42); }
+.cake .layer:nth-child(2){transform:translate(-50%,-50%) rotateX(90deg) translateZ(27px);background:radial-gradient(circle at 35% 27%,#ffbed5,#ff6f91 59%,#c83067)}
+.cake .layer:nth-child(3){transform:translate(-50%,-50%) rotateX(90deg) translateZ(12px);background:radial-gradient(circle at 35% 27%,#fbd8fa,#a18cd1 62%,#7056a4)}
+.cake .layer:nth-child(4){transform:translate(-50%,-50%) rotateX(90deg) translateZ(-3px)}
+.cake .layer:nth-child(5){transform:translate(-50%,-50%) rotateX(90deg) translateZ(-18px);background:radial-gradient(circle at 35% 27%,#ffbed5,#ff6f91 59%,#c83067)}
+.cake .layer:nth-child(6){transform:translate(-50%,-50%) rotateX(90deg) translateZ(-33px);background:radial-gradient(circle at 35% 27%,#fbd8fa,#a18cd1 62%,#7056a4)}
+.cake .layer:nth-child(7){transform:translate(-50%,-50%) rotateX(90deg) translateZ(-48px)}
+.cake .layer:nth-child(8){transform:translate(-50%,-50%) rotateX(90deg) translateZ(-63px);background:radial-gradient(circle at 35% 27%,#ffbed5,#ff6f91 59%,#c83067)}
+.cake .layer:nth-child(9){transform:translate(-50%,-50%) rotateX(90deg) translateZ(-78px);background:radial-gradient(circle at 35% 27%,#fbd8fa,#a18cd1 62%,#7056a4)}
+.cake .birthday-layer span { position:absolute; inset:0; display:grid; place-items:center; color:#fffdf1; font:24px Pacifico,cursive; text-shadow:0 2px 4px #9c3b31; transform:rotate(12deg); }
+.cake .layer.plate { left:50%; bottom:auto; width:290px; height:290px; transform:translate(-50%,-50%) rotateX(90deg) translateZ(-101px); background:radial-gradient(circle,#fff 0 30%,#5c1c73 54%,#12071e 75%); box-shadow:0 0 20px 6px rgba(255,206,104,.35); }
+.number-candles { transform:translateX(-5px) translateZ(76px); }
+.flame { background:radial-gradient(circle,yellow,orange,red); animation-duration:.2s; }
+.glitter-piece { width:30px; height:30px; background:radial-gradient(circle,#fff,gold,transparent 67%); box-shadow:none; animation:glitter-fall var(--fall-time) linear infinite; animation-delay:var(--fall-delay); }
+@keyframes glitter-fall { from { transform:translateY(-10vh) rotate(0deg) scale(var(--glitter-scale)); opacity:1; } to { transform:translateY(110vh) rotate(360deg) scale(var(--glitter-scale)); opacity:0; } }
